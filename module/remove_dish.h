@@ -45,10 +45,54 @@ void print_list(){
     }
     else{
         while(dish_curr){
-            printf("%d    %s        %.3d         %lld\n", i + 1, dish_curr->name, dish_curr->quantity, dish_curr->price);
+            printf("%d    %s        %.3d         %lld\n", i + 1, dish_curr->dish.name, dish_curr->dish.quantity, dish_curr->dish.price);
             dish_curr = dish_curr->next;
         }
-        sleep(1000);
+        // sleep(1000);
     }
 }
 
+bool search_and_delete(char *name){
+    if(!dish_head){
+        return false;
+
+    }
+    else if(strcmp(name, dish_head->dish.name) == 0){
+        pop_head_dish();
+        return true;
+    }
+    else if(strcmp(name, dish_tail->dish.name) == 0){
+        pop_tail_dish();
+        return true;
+    }
+    else{
+        dish_curr == dish_head;
+        while(dish_curr && strcmp(name, dish_curr ->dish.name) != 0){
+            dish_curr = dish_curr->next;
+        }
+    }
+}
+
+void pop_menu (){
+    dish_curr = dish_head;
+    if(!dish_curr){
+        puts("There is no available menu");
+        printf("Press enter to continue...");
+        getchar();
+        return;
+    }
+    dish_curr = dish_head;
+    print_list();
+    bool deleted = false;
+    char *temp_name = (char *)malloc(sizeof(char));
+    while(!deleted){
+        printf("Insert dish's name to be deleted: ");
+        scanf("%[^\n]", temp_name);
+        getchar();
+        deleted =search_and_delete(temp_name);
+    }
+    free(temp_name);
+    puts("The dish has been removed!");
+    puts("Press enter to continue...");
+    getchar();
+}
