@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "dish.h"
+#include "../struct/dish.h"
 
 void add_dish(Dish temp){
     Node_Dish *temp_node = (Node_Dish*)malloc(sizeof(Node_Dish));
