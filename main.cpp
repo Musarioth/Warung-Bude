@@ -5,6 +5,7 @@
 #include "module/add_dish.h"
 #include "module/remove_dish.h"
 #include "module/add_customer.h"
+#include "module/search_customer.h"
 #include "module/exit.h"
 
 
@@ -83,6 +84,11 @@ int main(){
             case 3:
                 system("clear");
                 add_customer();
+                break;
+            case 4:
+                system("clear");
+                search_cust();
+                puts("");
                 break;
             case 8:
                 system("clear");
