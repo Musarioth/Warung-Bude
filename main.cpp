@@ -76,9 +76,11 @@ int main(){
                 input_dish();
                 break; 
             case 2:
+                systemp("clear");
                 pop_menu();
                 break;
             case 8:
+                system("clear");
                 exit_screen();
                 flag = 0;
                 break;
