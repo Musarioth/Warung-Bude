@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include "module/add_dish.h"
 #include "module/remove_dish.h"
+#include "module/add_customer.h"
 #include "module/exit.h"
 
 
@@ -78,6 +79,10 @@ int main(){
             case 2:
                 system("clear");
                 pop_menu();
+                break;
+            case 3:
+                system("clear");
+                add_customer();
                 break;
             case 8:
                 system("clear");

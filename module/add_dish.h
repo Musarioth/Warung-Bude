@@ -19,20 +19,23 @@ void add_dish(Dish temp){
 }
 
 void input_dish(){
-    bool flag = true;
     Dish *temp_dish = (Dish*)malloc(sizeof(Dish));
     temp_dish->name = (char *)malloc(sizeof(char));
-    do{
+    bool flag = false;
+    while (!flag){
         printf("Insert the name of the dish [Lowercase letters]: ");
         scanf("%[^\n]", temp_dish->name);
         getchar();
-        for(int i = 0; i != '\0'; i++){
-            if(temp_dish->name[i] > 64 && temp_dish->name[i] < 91){
-                flag = false;
-                break;
+        bool valid = false;
+        for (int i = 0; temp_dish->name[i] != '\0'; i++) {
+            if (temp_dish->name[i] > 64 && temp_dish->name[i] < 91){
+                valid = true;
             }
         }
-    } while(flag == false);
+        if (!valid){
+            flag = true;
+        }
+    }
     temp_dish->quantity = 0;
     temp_dish->price = 0;
     while(temp_dish->price < 1000 || temp_dish->price > 50000){

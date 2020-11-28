@@ -5,7 +5,7 @@ struct Order {
 }*newOrder, *currOrder, *delOrder;
 
 struct Customer {
-     char name[255];
+     char *name;
      Order *headOrder, *tailOrder;
      Customer *prev, *next;    
-}*headCustomer[26], *tailCustomer[26], *currCustomer, *newCustomer, *delCustomer;
+}*head_customer[26], *tail_customer[26], *curr_customer, *new_customer, *del_customer;
