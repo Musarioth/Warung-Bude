@@ -1,3 +1,9 @@
+struct Order {
+    char name[255];
+    int quantity, price;
+    Order *prev, *next;
+}*newOrder, *currOrder, *delOrder;
+
 struct Customer {
      char name[255];
      Order *headOrder, *tailOrder;
