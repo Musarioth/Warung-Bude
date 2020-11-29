@@ -9,7 +9,7 @@ Customer *createNode(char *name) {
   return temp;
 }
 
-const int MAX_ELEMENT = 4;
+const int MAX_ELEMENT = 30;
 unsigned long DJB2(char *str) {
   unsigned long hash = 5381;
   int c;

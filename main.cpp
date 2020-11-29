@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#include "module/add_dish.h"
-#include "module/remove_dish.h"
+#include "module/process_dish.h"
 #include "module/add_customer.h"
-#include "module/search_customer.h"
+// #include "module/search_customer.h"
 #include "module/exit.h"
 
 
@@ -87,8 +86,14 @@ int main(){
                 break;
             case 4:
                 system("clear");
-                search_cust();
+                // search_cust();
                 puts("");
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
                 break;
             case 8:
                 system("clear");

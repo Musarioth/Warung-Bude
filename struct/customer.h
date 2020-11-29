@@ -1,5 +1,5 @@
 struct Order {
-    char name[255];
+    char *name;
     int quantity, price;
     Order *prev, *next;
 }*newOrder, *currOrder, *delOrder;
