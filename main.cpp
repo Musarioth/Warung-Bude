@@ -3,7 +3,7 @@
 #include <time.h>
 #include <unistd.h>
 #include "module/process_dish.h"
-#include "module/add_customer.h"
+#include "module/process_customer.h"
 // #include "module/search_customer.h"
 #include "module/exit.h"
 
@@ -86,10 +86,12 @@ int main(){
                 break;
             case 4:
                 system("clear");
-                // search_cust();
+                find_customer();
                 puts("");
                 break;
             case 5:
+                system("clear");
+                list_customer();
                 break;
             case 6:
                 break;

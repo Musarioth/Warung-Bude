@@ -8,4 +8,5 @@ struct Customer {
      char *name;
      Order *headOrder, *tailOrder;
      Customer *prev, *next;    
-}*head_customer[26], *tail_customer[26], *curr_customer, *new_customer, *del_customer;
+}*head_customer[255], *tail_customer[255], *curr_customer, *new_customer, *del_customer;
+
