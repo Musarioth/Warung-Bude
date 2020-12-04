@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void art(){
+void art(){ // ascii art
     puts("");
     puts("                                                      ..`                                           ");
     puts("                  .//.                               /+++-   `    :/:                               ");
@@ -20,7 +20,7 @@ void art(){
     puts("                                    ```     ``      ``      `     ```   `         ` `               ");
 }
 
-void exit_screen(){
+void exit_screen(){ // perintah untuk menampilkan
     puts("Please expand your terminal to full screen!");
     printf("press enter to continue");
     getchar();

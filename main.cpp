@@ -7,27 +7,6 @@
 // #include "module/search_customer.h"
 #include "module/exit.h"
 
-
-// struct Order {
-//     char name[255];
-//     int quantity, price;
-//     Order *prev, *next;
-// }*newOrder, *currOrder, *delOrder;
-
-// struct Customer {
-//     char name[255];
-//     Order *headOrder, *tailOrder;
-//     Customer *prev, *next;    
-// }*headCustomer[26], *tailCustomer[26], *currCustomer, *newCustomer, *delCustomer;
-
-// unsigned long djb2(char *str, int total) {
-//   unsigned long hash = 5381;
-//   int c;
-//   while ((c = *str++))
-//       hash = ((hash << 5) + hash) + c;
-//   return hash % total;
-// }
-
 void main_menu(){
     system("clear");
     printf ("System: ");
@@ -93,7 +72,7 @@ int main(){
                 system("clear");
                 list_customer();
                 break;
-            case 6:
+            case 6: // tidak dikerjakan karena belum mampu menggabungkan linked lists dengan hash table
                 break;
             case 7:
                 break;

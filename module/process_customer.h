@@ -16,7 +16,7 @@ struct Order_Info
 };
 
 
-unsigned long DJB2(char *str) {
+unsigned long DJB2(char *str) { // untuk memberikan index random
   unsigned long hash = 5381;
   int c;
   while ((c = *str++))
@@ -24,7 +24,7 @@ unsigned long DJB2(char *str) {
   return hash % MAX_ELEMENT;
 }
 
-void add_customer(){
+void add_customer(){ // prompt add customer
   Customer *temp_cust = (Customer *)malloc(sizeof(Customer));
   temp_cust->name = (char*)malloc(sizeof(char));
   temp_cust->next = NULL;
@@ -56,7 +56,7 @@ void add_customer(){
   getchar();
 }
 
-Customer_Info *find(char *key){
+Customer_Info *find(char *key){ //mengecek apakah ada customer atau tidak
   for(int i = 0; i < MAX_ELEMENT; i++){
     if(head_customer[i]){
       curr_customer = head_customer[i];
@@ -75,7 +75,7 @@ Customer_Info *find(char *key){
 }
 
 
-void find_customer(){
+void find_customer(){ //untuk mencari customer (prompt)
   bool flag = false;
   char *target = (char *)malloc(sizeof(char));
   while (!flag){
@@ -95,17 +95,21 @@ void find_customer(){
   Customer_Info *result = find(target);
   if(result){
     printf("%s is present with customer's ID: %d.\n", result->name, result->index);
+    printf("Press enter to continue...");
+    getchar();
     // free(result);
   }
-  else if(!result){
+  else if(!result){ // bila tidak ada customer maka akan terjadi segmentation fault
     printf("%s is not present.\n", result->name);
+    printf("Press enter to continue...");
+    getchar();
   }
-  free(target);
-  printf("Press enter to continue...");
-  getchar();
+  // free(target);
+  // printf("Press enter to continue...");
+  // getchar();
 }
 
-void list_customer() {
+void list_customer() { // menampilkan list customer
     puts("Customer’s List");
     for (int i = 0; i < MAX_ELEMENT; i++) {
         if (head_customer[i]) {

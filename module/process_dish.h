@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "../struct/dish.h"
 
-void add_dish(Dish temp){
+void add_dish(Dish temp){ // create node dan push dish
     Node_Dish *temp_node = (Node_Dish*)malloc(sizeof(Node_Dish));
     temp_node->dish = temp;
     temp_node->next = temp_node->prev = NULL;
@@ -18,7 +18,7 @@ void add_dish(Dish temp){
     }
 }
 
-void input_dish(){
+void input_dish(){ // memberikan prompt
     Dish *temp_dish = (Dish*)malloc(sizeof(Dish));
     temp_dish->name = (char *)malloc(sizeof(char));
     bool flag = false;
@@ -55,12 +55,6 @@ void input_dish(){
     getchar();
 }
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
-// #include "dish.h"
-
 void pop_head_dish(){
     if(dish_head && dish_head == dish_tail){
         dish_head = dish_tail = NULL;
@@ -89,7 +83,7 @@ void pop_tail_dish(){
     }
 }
 
-void print_list(){
+void print_list(){ // untuk print list dari dish (tidak mengerti cara padding)
     int i = 0;
     printf("%25s\n", "Bude's Menu");
     puts("=======================================");
@@ -109,7 +103,7 @@ void print_list(){
     }
 }
 
-bool search_and_delete(char *name){
+bool search_and_delete(char *name){ // untuk mengecek apakah dish available dan untuk menghapus
     if(!dish_head){
         return false;
 
@@ -130,7 +124,7 @@ bool search_and_delete(char *name){
     }
 }
 
-void pop_menu (){
+void pop_menu (){ //memberi tampilan untuk menghapus nama dish
     dish_curr = dish_head;
     if(!dish_curr){
         puts("There is no available menu");
